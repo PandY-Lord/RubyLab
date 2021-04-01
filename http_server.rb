@@ -7,14 +7,14 @@ module Resource
 
     loop do
       print 'Choose verb to interact with resources (GET/POST/PUT/DELETE) / q to exit: '
-      verb = gets.chomp
+      verb = gets.chomp.downcase
       break if verb == 'q'
 
       action = nil
 
       if verb == 'GET'
         print 'Choose action (index/show) / q to exit: '
-        action = gets.chomp
+        action = gets.chomp.downcase
         break if action == 'q'
       end
 
@@ -143,7 +143,7 @@ class Router
 
     loop do
       print 'Choose resource you want to interact (1 - Posts, 2 - Comments, q - Exit): '
-      choise = gets.chomp
+      choise = gets.chomp.downcase
 
       PostsController.connection(@routes['posts']) if choise == '1'
       CommentsController.connection(@routes['comments']) if choise == '2'
