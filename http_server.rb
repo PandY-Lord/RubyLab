@@ -6,16 +6,16 @@ module Resource
     end
 
     loop do
-      print 'Choose verb to interact with resources (GET/POST/PUT/DELETE) / q to exit: '
-      verb = gets.chomp.downcase
-      break if verb == 'q'
+      print 'Choose verb to interact with resources (GET|POST|PUT|DELETE) | q to exit: '
+      verb = gets.chomp
+      break if verb == 'O'
 
       action = nil
 
       if verb == 'GET'
-        print 'Choose action (index/show) / q to exit: '
-        action = gets.chomp.downcase
-        break if action == 'q'
+        print 'Choose action (index|show) | q to exit: '
+        action = gets.chomp
+        break if action == 'O'
       end
 
 
@@ -48,7 +48,7 @@ class PostsController
   end
 
   def create
-    puts('Введите текст поста')
+    puts('Введите новый текст поста')
     text = gets.chomp
     @posts.append(text)
     puts("#{@posts.length - 1} #{text}")
@@ -60,7 +60,7 @@ class PostsController
     if id >= @posts.length
       puts('Некорентный id')
     else
-      puts('Введите текст нового поста')
+      puts('Введите новый текст поста')
       text = gets.chomp
       @posts[id] = text
       puts("#{id} #{@posts[id]}")
@@ -143,7 +143,7 @@ class Router
 
     loop do
       print 'Choose resource you want to interact (1 - Posts, 2 - Comments, q - Exit): '
-      choise = gets.chomp.downcase
+      choise = gets.chomp
 
       PostsController.connection(@routes['posts']) if choise == '1'
       CommentsController.connection(@routes['comments']) if choise == '2'
