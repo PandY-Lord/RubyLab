@@ -1,4 +1,4 @@
-<h2>Новая запись об отчете</h2>
+<h2>Add report</h2>
 <%= form_for :post, url: posts_path do |f| %>
   <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |msg| %>
@@ -6,15 +6,15 @@
     <% end %>
   <% end %>
   <p>
-    Титул
+    Title
     <br>
     <%= f.text_field(:title, {:class => 'form-control'}) %>
   </p>
   <p>
-    Текст<br>
+    Description<br>
     <%= f.text_area(:description, {:class => 'form-control'}) %>
   </p>
   <p>
-    <%= f.submit({:class => 'btn btn-dark'}) %>
+    <%= f.submit({:class => 'btn btn-link'}) %>
   </p>
 <% end %>

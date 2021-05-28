@@ -1,4 +1,4 @@
-<h2>Изменить отчет</h2>
+<h2>Edit report</h2>
 <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
   <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |msg| %>
@@ -6,11 +6,11 @@
     <% end %>
   <% end %>
   <p>
-    Название<br>
+    Title<br>
     <%= f.text_field(:title, {:class => 'form-control'}) %>
   </p>
   <p>
-    Фулл текст<br>
+    Description<br>
     <%= f.text_area(:description, {:class => 'form-control'}) %>
   </p>
   <p>

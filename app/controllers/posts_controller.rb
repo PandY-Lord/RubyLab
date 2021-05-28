@@ -1,48 +1,48 @@
-class PostsController < ApplicationController
+class ReportsController < ApplicationController
   def index
-    @post = Post.all
+    @Report = Report.all
   end
 
   def new
-    @post = Post.new
+    @Report = Report.new
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @Report = Report.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @Report = Report.find(params[:id])
 
-    if(@post.update(post_params))
-      redirect_to @post
+    if(@Report.update(Report_params))
+      redirect_to @Report
     else
       render 'edit'
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @Report = Report.find(params[:id])
 
-    @post.destroy
+    @Report.destroy
     redirect_to :action => :index
   end
 
   def show
-    @post = Post.find(params[:id])
+    @Report = Report.find(params[:id])
   end
 
   def create
-    @post = Post.new(post_params)
+    @Report = Report.new(Report_params)
 
-    if(@post.save)
-      redirect_to @post
+    if(@Report.save)
+      redirect_to @Report
     else
       render 'new'
     end
   end
 
-  private def post_params
-    params.require(:post).permit(:title, :description)
+  private def Report_params
+    params.require(:Report).permit(:title, :description)
   end
 end

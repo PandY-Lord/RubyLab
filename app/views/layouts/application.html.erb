@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ИПО_ ЛР6</title>
+    <title>lab6</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,8 +14,8 @@
 
   <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto"><%= link_to "Все отчеты", home_path %></h5>
-      <span class="btn btn-link"><%= link_to "Новый отчет", new_post_path %></span>
+      <h5 class="my-0 mr-md-auto"><%= link_to "All reports", home_path %></h5>
+      <span class="btn btn-outline-primary"><%= link_to "New report", new_post_path %></span>
     </div>
     <div class="container">
       <%= yield %>
