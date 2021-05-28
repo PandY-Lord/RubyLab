@@ -1,4 +1,4 @@
-class MarksController < ApplicationController
+class MarkController < ApplicationController
   def create
     @Report = Report.find(params[:Report_id])
     @mark = @Report.marks.create(mark_params)
